@@ -33,4 +33,18 @@ all =
                         mostFrequentNames [ "Kari", "Ola", "Petter", "Ola", "Ola", "Kari", "Ola", "Ola", "Ola", "Ola" ]
                 in
                     Expect.equal [ "ola (7)", "kari (2)", "petter (1)" ] result
+        , test "10 names equal count" <|
+            \_ ->
+                let
+                    result =
+                        mostFrequentNames [ "Ola", "Ola", "Ola", "Ola", "Ola", "Kari", "Kari", "Kari", "Kari", "Kari", "Petter" ]
+                in
+                    Expect.equal [ "kari (5)", "ola (5)", "petter (1)" ] result
+        , test "10 names with middle name dupes" <|
+            \_ ->
+                let
+                    result =
+                        mostFrequentNames [ "Ola Normann Ola-Normann", "Ola Nilsen Ola Nilsen", "Ola", "Ola", "Ola", "Ola", "Ola", "Kari", "Kari", "Petter" ]
+                in
+                    Expect.equal [ "ola (7)", "kari (2)", "nilsen (1)" ] result
         ]
