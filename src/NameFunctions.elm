@@ -10,6 +10,8 @@ mostFrequentNames inputNames =
     inputNames
         |> List.map String.toLower
         |> List.concatMap splitNames
+        |> List.map String.trim
+        |> List.filter (\navn -> String.length navn > 0)
         |> List.foldl (\name accumulator -> Dict.update name incrementer accumulator) Dict.empty
         |> Dict.toList
         |> List.sortWith sortByCountThenName

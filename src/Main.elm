@@ -62,10 +62,10 @@ updateNameStats input =
 view : Model -> Html Msg
 view model =
     div []
-        [ h1 [] [ text "Most frequent words" ]
+        [ h1 [] [ text "Most frequent words - Elm" ]
         , div [ class "container" ]
             [ div [ class "item" ]
-                [ h3 [] [ text "text1" ]
+                [ h3 [] [ text "Names" ]
                 , textarea [ cols 80, rows 10, onInput TextAreaUpdated ] [ text model.inputNames ]
                 ]
             , div [ class "item" ]

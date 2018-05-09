@@ -1,0 +1,1 @@
+FROM hakonrossebo/elm-demo:v2

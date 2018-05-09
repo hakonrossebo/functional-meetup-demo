@@ -1,0 +1,13 @@
+{
+  "name": "json-api",
+  "scripts": {
+    "start": "micro",
+    "test": "jest"
+  },
+  "dependencies": {
+    "micro": "latest"
+  },
+  "devDependencies": {
+    "jest": "^22.4.3"
+  }
+}
