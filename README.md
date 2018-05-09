@@ -3,6 +3,23 @@ This project is bootstrapped with [Create Elm App](https://github.com/halfzebra/
 Below you will find some information on how to perform basic tasks.
 You can find the most recent version of this guide [here](https://github.com/halfzebra/create-elm-app/blob/master/template/README.md).
 
+
+## Project info
+docker build -t elm-demo .
+docker run -p 5000:5000 -t elm-demo:latest
+docker tag elm-demo hakonrossebo/elm-demo:v1
+docker login -u hakonrossebo
+docker push hakonrossebo/elm-demo:v1
+
+install and configure hyper.sh
+hyper config
+
+hyper run -d -p 80:5000 hakonrossebo/elm-demo:v1
+hyper ps
+hyper fip allocate 1
+hyper fip attach 169.197.100.116 modest-albattani
+
+
 ## Table of Contents
 - [Sending feedback](#sending-feedback)
 - [Folder structure](#folder-structure)
